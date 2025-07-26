@@ -21,7 +21,7 @@ const PORT = process.env.PORT || 5000;
 // const server = createServer(app);
 // const io = new Server(server);
 app.use((0, cors_1.default)({
-    origin: 'http://localhost:5173',
+    origin: 'https://lcv-real-time-96hk.vercel.app',
     credentials: true
 }));
 app.use(express_1.default.urlencoded({ extended: true }));
