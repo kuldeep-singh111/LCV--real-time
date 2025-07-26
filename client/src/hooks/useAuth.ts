@@ -8,7 +8,7 @@ export const useAuth = () => {
     useEffect(() => {
         const checkAuth = async () => {
             try {
-                const res = await axios.get('http://localhost:9000/api/auth', { withCredentials: true });
+                const res = await axios.get('https://lcv-86w3.onrender.com/api/auth', { withCredentials: true });
                 console.log('l response', res.data.isauthenticated)
                 setIsAuthenticated(res.data.isauthenticated);
 

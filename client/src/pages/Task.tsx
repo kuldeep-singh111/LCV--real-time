@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { getAllTasks, deleteTask } from '../api/apiFun';
 import { format } from 'date-fns';
@@ -18,7 +18,7 @@ const TaskPage = () => {
     console.log("tasks data", data);
     const deleteMutation = useMutation({
         mutationFn: deleteTask,
-        onSuccess: () => queryClient.invalidateQueries(['tasks'])
+        onSuccess: () => queryClient.invalidateQueries({ queryKey: ['tasks'] })
     });
 
 

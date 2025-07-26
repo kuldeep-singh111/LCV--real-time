@@ -19,7 +19,7 @@ const CreateTask = () => {
     const mutation = useMutation({
         mutationFn: createTask,
         onSuccess: () => {
-            queryClient.invalidateQueries(['tasks']);
+            queryClient.invalidateQueries({ queryKey: ['tasks'] });
             navigate('/tasks');
         },
         onError: (err: any) => {

@@ -29,7 +29,7 @@ const EditTask: React.FC<EditTaskProps> = ({ task, onClose }) => {
     const mutation = useMutation({
         mutationFn: (updatedData: any) => updateTask(task._id, updatedData),
         onSuccess: () => {
-            queryClient.invalidateQueries(['tasks']);
+            queryClient.invalidateQueries({ queryKey: ['tasks'] });
             onClose();
         },
         onError: (error: any) => {
